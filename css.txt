@@ -1,60 +1,96 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Onitsuka Clone</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <h1 class="logo">Onitsuka Tiger</h1>
+      <nav>
+        <ul class="menu">
+          <li class="dropdown">
+            <a href="#">Shoes <i class="fas fa-caret-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Men</a></li>
+              <li><a href="#">Women</a></li>
+              <li><a href="#">Kids</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a href="#">Apparel <i class="fas fa-caret-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Tops</a></li>
+              <li><a href="#">Bottoms</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Accessories</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-header {
-  background-color: #000;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
-}
+  <section class="hero-slider">
+    <div class="slide active" style="background-image: url('https://www.onitsukatiger.com/on/demandware.static/-/Library-Sites-OnitsukaTigerSharedLibrary/default/dwe631bf91/images/HP/202404/OT2301_AWAKE_HP_MV_1.jpg');"></div>
+    <div class="slide" style="background-image: url('https://www.onitsukatiger.com/on/demandware.static/-/Library-Sites-OnitsukaTigerSharedLibrary/default/dw3bba2d65/images/HP/202404/OTSS24_HP_MV_1.jpg');"></div>
+    <div class="slider-controls">
+      <span class="prev">&#10094;</span>
+      <span class="next">&#10095;</span>
+    </div>
+  </section>
 
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1rem;
-  padding: 1rem;
-}
+  <section class="products">
+    <h3>Recommended for You</h3>
+    <div class="product-list">
+      <div class="product">
+        <img src="https://images.onitsukatiger.com/is/image/onitsukatiger/1183C205_001_sr_RT_GLB?fmt=jpg&wid=640&hei=640" alt="Mexico 66">
+        <h4>MEXICO 66 SABOT</h4>
+        <p>Rp.2,600,000</p>
+      </div>
+      <div class="product">
+        <img src="https://images.onitsukatiger.com/is/image/onitsukatiger/1183B844_250_sr_RT_GLB?fmt=jpg&wid=640&hei=640" alt="Mexico 66">
+        <h4>MEXICO 66 PARATY</h4>
+        <p>Rp.2,400,000</p>
+      </div>
+    </div>
+  </section>
 
-.product-card {
-  border: 1px solid #ddd;
-  padding: 1rem;
-  position: relative;
-  text-align: center;
-}
+  <footer>
+    <div class="footer-container">
+      <p>&copy; 2025 Onitsuka Clone. All rights reserved.</p>
+    </div>
+  </footer>
 
-.product-card img {
-  width: 100%;
-  height: auto;
-}
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+    let index = 0;
 
-.product-card h2 {
-  font-size: 1.1rem;
-  margin: 0.5rem 0;
-}
+    function showSlide(i) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      slides[i].classList.add('active');
+    }
 
-.price {
-  color: #333;
-  font-weight: bold;
-}
+    prev.onclick = () => {
+      index = (index - 1 + slides.length) % slides.length;
+      showSlide(index);
+    }
 
-.label {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  background-color: #f00;
-  color: #fff;
-  padding: 0.2rem 0.5rem;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-}
+    next.onclick = () => {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    }
 
-.label.new {
-  background-color: #007bff;
-}
+    setInterval(() => {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    }, 5000);
+  </script>
+</body>
+</html>
 
-.label.bestseller {
-  background-color: #28a745;
-}
