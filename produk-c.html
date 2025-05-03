@@ -9,19 +9,37 @@
       text-align: center;
       padding-top: 50px;
       background-color: #ffffff;
-      color: #000;
+      color: #000000;
+      margin: 0;
     }
-    img {
-      width: 250px;
-      margin-top: 20px;
-      border-radius: 10px;
+
+    h1 {
+      font-weight: 600;
+      margin-bottom: 10px;
     }
-    a {
-      text-decoration: none;
-      color: #000;
+
+    p {
       font-size: 16px;
     }
-    a.button {
+
+    img {
+      margin-top: 20px;
+      width: 200px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    a {
+      color: #000000;
+      text-decoration: none;
+      font-size: 16px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .button {
       display: inline-block;
       margin-top: 20px;
       padding: 10px 20px;
@@ -30,7 +48,8 @@
       border-radius: 8px;
       transition: background-color 0.3s ease;
     }
-    a.button:hover {
+
+    .button:hover {
       background-color: #333;
     }
   </style>
@@ -41,7 +60,7 @@
   <p>Silakan scan QR DANA berikut untuk membayar:</p>
   <img src="https://raw.githubusercontent.com/sailorr-ui/produkku/refs/heads/main/CoffeShop_qrcode.png" alt="QR DANA">
 
-  <p><a href="https://link.dana.id/minta?full_url=https://qr.dana.id/v1/281012092025050317213299" class="button" target="_blank">Bayar via DANA</a></p>
+  <p><a class="button" href="https://link.dana.id/minta?full_url=https://qr.dana.id/v1/281012092025050317213299" target="_blank">Bayar via DANA</a></p>
   <p><a href="index.html">Kembali ke Menu</a></p>
 </body>
 </html>
