@@ -1,47 +1,60 @@
 body {
-  font-family: 'Poppins', sans-serif; /* Lebih modern */
-  color: #000000; /* Semua teks jadi hitam */
-  background-color: #ffffff;
-  text-align: center;
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
-h1, h2, h3 {
-  font-weight: 600;
-  margin-top: 20px;
+h1 {
+  margin-top: 30px;
+  font-size: 2em;
+  color: #333;
 }
 
-p, a {
-  color: #000000;
-  font-size: 16px;
-  text-decoration: none;
+.produk-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
 }
 
-a:hover {
-  text-decoration: underline;
+.produk {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 15px;
+  max-width: 250px;
+  text-align: center;
+  transition: transform 0.2s ease;
 }
 
-img {
-  margin-top: 20px;
-  width: 200px;
+.produk:hover {
+  transform: scale(1.03);
+}
+
+.produk img {
+  width: 100%;
   height: auto;
-  border-radius: 10px; /* QR-nya ada sudut melengkung */
+  border-radius: 10px;
 }
 
-/* Optional: tombol link terlihat lebih rapi */
-a.button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #000;
-  color: #fff;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
+.produk h2 {
+  font-size: 1.2em;
+  margin: 10px 0 5px;
+  color: #222;
 }
 
-a.button:hover {
-  background-color: #333;
+.harga {
+  font-weight: bold;
+  color: #444;
+  margin: 0;
+}
+
+.produk-link {
+  text-decoration: none;
+  color: inherit;
 }
 
 
