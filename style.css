@@ -75,11 +75,65 @@ h1 {
   background-color: #1ebc5b;
 }
 
+  body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.qr-pembayaran {
+  max-width: 100%;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.qr-pembayaran img {
+  width: 80%;
+  max-width: 300px;
+  height: auto;
+  margin-top: 20px;
+}
+
+.qr-pembayaran h2,
+.qr-pembayaran p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.qr-pembayaran a.button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 20px;
+  background-color: black;
+  color: white;
+  border-radius: 8px;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.qr-pembayaran a.button:hover {
+  background-color: #333;
+}
 /* Responsif di layar kecil */
 @media (max-width: 600px) {
   .produk-container {
     grid-template-columns: 1fr;
   }
+  @media (max-width: 480px) {
+  .qr-pembayaran h2,
+  .qr-pembayaran p {
+    font-size: 16px;
+  }
+
+  .qr-pembayaran a.button {
+    width: 100%;
+    font-size: 18px;
+  }
+}
+
+
 }
 
 
