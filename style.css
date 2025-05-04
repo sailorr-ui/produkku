@@ -116,25 +116,46 @@ h1 {
 .qr-pembayaran a.button:hover {
   background-color: #333;
 }
-/* Responsif di layar kecil */
 @media (max-width: 600px) {
-  .produk-container {
-    grid-template-columns: 1fr;
+  .qr-pembayaran {
+    width: 100%;
+    padding: 20px;
+    font-size: 18px;
+    text-align: center;
+    box-sizing: border-box;
   }
-  @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
   .qr-pembayaran h2,
   .qr-pembayaran p {
     font-size: 16px;
+  }
+
+  .qr-pembayaran img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
   }
 
   .qr-pembayaran a.button {
     width: 100%;
     font-size: 18px;
   }
+
+  .qr-pembayaran button,
+  .qr-pembayaran a {
+    font-size: 16px;
+    padding: 12px 20px;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+    display: block;
+  }
 }
 
 
-}
+
 
 
 
