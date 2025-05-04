@@ -53,16 +53,45 @@
     .button:hover {
       background-color: #333;
     }
+     input[type="text"] {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      width: 80%;
+      max-width: 300px;
+    }
   </style>
 </head>
 <body>
    <div class="qr-pembayaran">
   <h1>Pembayaran Americano</h1>
   <p>Harga: <strong>Rp15.000</strong></p>
+  <form id="form-nama" onsubmit="return simpanNama()">
+  <label for="nama">Atas Nama:</label><br>
+  <input type="text" id="nama" name="nama" required placeholder="Tulis nama kamu di sini" style="padding:10px; border-radius:5px; border:1px solid #ccc; width:80%; max-width:300px;"><br><br>
+  <button type="submit" class="button">Lanjut Bayar</button>
+</form>
+  <div id="tombol-bayar" style="display:none;">
   <p>Silakan scan QR DANA berikut untuk membayar:</p>
   <img src="https://raw.githubusercontent.com/sailorr-ui/produkku/refs/heads/main/CoffeShop_qrcode.png" alt="QR DANA">
 
   <p><a class="button" href="https://link.dana.id/minta?full_url=https://qr.dana.id/v1/281012092025050317213299" target="_blank">Bayar via DANA</a></p>
   <p><a href="index.html">Kembali ke Menu</a></p>
+        </div>
+  </div>
+   <script>
+    function simpanNama() {
+      const nama = document.getElementById("nama").value.trim();
+      if (nama === "") {
+        alert("Tolong isi nama terlebih dahulu.");
+        return false;
+      }
+
+      alert("Terima kasih, " + nama + "! Silakan lanjut ke pembayaran.");
+      document.getElementById("form-nama").style.display = "none";
+      document.getElementById("tombol-bayar").style.display = "block";
+      return false;
+    }
+  </script>
 </body>
 </html>
