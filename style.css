@@ -121,21 +121,13 @@ h1 {
 .qr-pembayaran a.button:hover {
   background-color: #333;
 }
-@media (max-width: 600px) {
-  .qr-pembayaran {
-    width: 100%;
+@media (max-width: 768px) {
+  .produk-container {
+    grid-template-columns: repeat(2, 1fr); /* Tampilkan 2 kolom */
+    gap: 20px;
     padding: 20px;
-    font-size: 18px;
-    text-align: center;
-    box-sizing: border-box;
   }
 }
-
-@media (max-width: 480px) {
-  .qr-pembayaran h2,
-  .qr-pembayaran p {
-    font-size: 16px;
-  }
 
   .qr-pembayaran img {
     width: 100%;
