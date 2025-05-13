@@ -90,26 +90,27 @@ h1 {
   margin-bottom: 15px;
 }
 
-/* ========== TOMBOL ========== */
-.button,
-.button-link {
-  display: inline-block;
-  padding: 10px 20px;
+.button, .button-link {
+  display: block;
+  width: 100%;
+  max-width: 300px;
   background-color: #000;
   color: #fff;
-  border-radius: 8px;
-  font-size: 16px;
-  text-decoration: none;
+  padding: 12px 0;
+  margin: 10px auto;
+  text-align: center;
   border: none;
-  margin: 8px 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease;
 }
 
-.button:hover,
-.button-link:hover {
+.button:hover, .button-link:hover {
   background-color: #333;
 }
+
 
 .qr-buttons {
   display: flex;
