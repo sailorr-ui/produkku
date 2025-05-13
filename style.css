@@ -1,3 +1,6 @@
+/* ======================= */
+/* RESET DASAR & BODY STYLE */
+/* ======================= */
 body {
   font-family: sans-serif;
   margin: 0;
@@ -6,20 +9,25 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
+/* ======================= */
+/* JUDUL UTAMA */
+/* ======================= */
 h1 {
   text-align: center;
   margin-top: 30px;
   color: #333;
 }
 
+/* ======================= */
+/* HALAMAN PRODUK */
+/* ======================= */
 .produk-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 40px; /* jarak antar baris dan kolom seragam, enak dilihat */
+  gap: 40px;
   justify-content: center;
   padding: 30px;
   max-width: 900px;
@@ -42,13 +50,12 @@ h1 {
 }
 
 .produk img {
-  width: 100%;       /* biar menyesuaikan bingkai */
-  height: 200px;     /* tinggi sesuai keinginan */
-  object-fit: cover; /* agar gambar tetap rapi */
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
   border-radius: 8px;
   margin-bottom: 10px;
 }
-
 
 .produk h2 {
   font-size: 18px;
@@ -61,7 +68,78 @@ h1 {
   color: #444;
 }
 
-/* Tombol WhatsApp mengambang */
+/* ======================= */
+/* QR PEMBAYARAN & FORM */
+/* ======================= */
+.qr-pembayaran {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: #fff;
+  border-radius: 12px;
+  margin: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.qr-pembayaran img {
+  width: 80%;
+  max-width: 300px;
+  height: auto;
+  margin: 20px 0;
+}
+
+.qr-pembayaran h2,
+.qr-pembayaran p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.qr-pembayaran input[type="text"] {
+  padding: 10px;
+  width: 90%;
+  max-width: 300px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+}
+
+/* ======================= */
+/* TOMBOL-TOMBOL STYLE */
+/* ======================= */
+.qr-pembayaran .button,
+.qr-pembayaran .button-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 16px;
+  text-decoration: none;
+  border: none;
+  margin: 8px 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.qr-pembayaran .button:hover,
+.qr-pembayaran .button-link:hover {
+  background-color: #333;
+}
+
+/* Wrapper tombol agar rapi & responsif */
+.qr-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+/* ======================= */
+/* TOMBOL WA MENGAMBANG */
+/* ======================= */
 .wa-float {
   position: fixed;
   bottom: 20px;
@@ -80,75 +158,29 @@ h1 {
   background-color: #1ebc5b;
 }
 
-  body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
-
-.qr-pembayaran {
-  max-width: 100%;
-  width: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-  text-align: center;
-}
-
-.qr-pembayaran img {
-  width: 80%;
-  max-width: 300px;
-  height: auto;
-  margin-top: 20px;
-}
-
-.qr-pembayaran h2,
-.qr-pembayaran p {
-  font-size: 18px;
-  margin: 10px 0;
-}
-
-.qr-pembayaran a.button {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 12px 20px;
-  background-color: black;
-  color: white;
-  border-radius: 8px;
-  font-size: 16px;
-  text-decoration: none;
-}
-
-.qr-pembayaran a.button:hover {
-  background-color: #333;
-}
+/* ======================= */
+/* RESPONSIVE */
+/* ======================= */
 @media (max-width: 768px) {
   .produk-container {
-    grid-template-columns: repeat(2, 1fr); /* Tampilkan 2 kolom */
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     padding: 20px;
   }
 }
 
-  .qr-pembayaran img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
+@media (max-width: 500px) {
+  .qr-buttons {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .qr-pembayaran a.button {
-    width: 100%;
-    font-size: 18px;
-  }
-
-  .qr-pembayaran button,
-  .qr-pembayaran a {
-    font-size: 16px;
-    padding: 12px 20px;
+  .qr-pembayaran .button,
+  .qr-pembayaran .button-link {
     width: 100%;
     max-width: 300px;
-    margin: 10px auto;
-    display: block;
   }
+}
 
 
 
