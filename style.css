@@ -1,29 +1,23 @@
-/* ======================= */
-/* RESET DASAR & BODY STYLE */
-/* ======================= */
+/* ========== RESET DASAR ========== */
 body {
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
+  color: #000;
+  text-align: center;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-/* ======================= */
-/* JUDUL UTAMA */
-/* ======================= */
+/* ========== JUDUL ========== */
 h1 {
-  text-align: center;
+  font-weight: 600;
   margin-top: 30px;
+  margin-bottom: 10px;
   color: #333;
 }
 
-/* ======================= */
-/* HALAMAN PRODUK */
-/* ======================= */
+/* ========== PRODUK CONTAINER (jika ada halaman index) ========== */
 .produk-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -68,19 +62,16 @@ h1 {
   color: #444;
 }
 
-/* ======================= */
-/* QR PEMBAYARAN & FORM */
-/* ======================= */
+/* ========== QR PEMBAYARAN ========== */
 .qr-pembayaran {
   width: 100%;
   max-width: 400px;
   padding: 20px;
-  box-sizing: border-box;
-  text-align: center;
+  margin: 30px auto;
   background-color: #fff;
   border-radius: 12px;
-  margin: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
 .qr-pembayaran img {
@@ -88,12 +79,6 @@ h1 {
   max-width: 300px;
   height: auto;
   margin: 20px 0;
-}
-
-.qr-pembayaran h2,
-.qr-pembayaran p {
-  font-size: 18px;
-  margin: 10px 0;
 }
 
 .qr-pembayaran input[type="text"] {
@@ -105,11 +90,9 @@ h1 {
   margin-bottom: 15px;
 }
 
-/* ======================= */
-/* TOMBOL-TOMBOL STYLE */
-/* ======================= */
-.qr-pembayaran .button,
-.qr-pembayaran .button-link {
+/* ========== TOMBOL ========== */
+.button,
+.button-link {
   display: inline-block;
   padding: 10px 20px;
   background-color: #000;
@@ -123,12 +106,11 @@ h1 {
   transition: background-color 0.3s ease;
 }
 
-.qr-pembayaran .button:hover,
-.qr-pembayaran .button-link:hover {
+.button:hover,
+.button-link:hover {
   background-color: #333;
 }
 
-/* Wrapper tombol agar rapi & responsif */
 .qr-buttons {
   display: flex;
   flex-wrap: wrap;
@@ -137,9 +119,7 @@ h1 {
   margin-top: 15px;
 }
 
-/* ======================= */
-/* TOMBOL WA MENGAMBANG */
-/* ======================= */
+/* ========== WHATSAPP FLOAT BUTTON (jika mau dipakai di index.html) ========== */
 .wa-float {
   position: fixed;
   bottom: 20px;
@@ -154,13 +134,12 @@ h1 {
   transition: background 0.3s;
   z-index: 1000;
 }
+
 .wa-float:hover {
   background-color: #1ebc5b;
 }
 
-/* ======================= */
-/* RESPONSIVE */
-/* ======================= */
+/* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
   .produk-container {
     grid-template-columns: repeat(2, 1fr);
@@ -175,12 +154,13 @@ h1 {
     align-items: center;
   }
 
-  .qr-pembayaran .button,
-  .qr-pembayaran .button-link {
+  .button,
+  .button-link {
     width: 100%;
     max-width: 300px;
   }
 }
+
 
 
 
