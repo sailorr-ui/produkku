@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pembayaran Americano</title>
   <style>
     body {
@@ -30,16 +30,6 @@
       border-radius: 10px;
     }
 
-    a {
-      color: #000000;
-      text-decoration: none;
-      font-size: 16px;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
     .button {
       display: inline-block;
       margin-top: 20px;
@@ -48,60 +38,79 @@
       color: #fff;
       border-radius: 8px;
       transition: background-color 0.3s ease;
+      text-decoration: none;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
     }
 
     .button:hover {
       background-color: #333;
     }
-     input[type="text"] {
+
+    input[type="text"] {
       padding: 10px;
       border-radius: 5px;
       border: 1px solid #ccc;
       width: 80%;
       max-width: 300px;
     }
+
+    .wa-button {
+      background-color: #25D366;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
-   <div class="qr-pembayaran">
-  <h1>Pembayaran Americano</h1>
-  <p>Harga: <strong>Rp15.000</strong></p>
-  <form id="gabungForm">
-  <label for="nama">Atas Nama:</label><br>
-  <input type="text" id="nama" name="nama" required placeholder="Tulis nama kamu di sini" style="padding:10px; width:80%; max-width:300px; margin:10px 0; border-radius:5px; border:1px solid #ccc;"><br>
+  <div class="qr-pembayaran">
+    <h1>Pembayaran Americano</h1>
+    <p>Harga: <strong>Rp15.000</strong></p>
 
-  <button type="submit" style="padding:10px 20px; background-color:#25D366; color:#fff; border:none; border-radius:8px; font-size:16px;">Lanjut ke WhatsApp & Bayar</button>
-</form>
+    <!-- Form Nama -->
+    <form id="gabungForm">
+      <label for="nama">Atas Nama:</label><br>
+      <input type="text" id="nama" name="nama" required placeholder="Tulis nama kamu di sini"><br><br>
+      <button type="submit" class="button">Lanjut Bayar</button>
+    </form>
 
+    <!-- Bagian QR & Tombol WA -->
+    <div id="tombol-bayar" style="display:none;">
+      <p>Silakan scan QR DANA berikut untuk membayar:</p>
+      <img src="https://raw.githubusercontent.com/sailorr-ui/produkku/refs/heads/main/CoffeShop_qrcode.png" alt="QR DANA">
 
-  <div id="tombol-bayar" style="display:none;">
-  <p>Silakan scan QR DANA berikut untuk membayar:</p>
-  <img src="https://raw.githubusercontent.com/sailorr-ui/produkku/refs/heads/main/CoffeShop_qrcode.png" alt="QR DANA">
+      <p><a class="button" href="https://link.dana.id/minta?full_url=https://qr.dana.id/v1/281012092025050317213299" target="_blank">Bayar via DANA</a></p>
 
-  <p><a class="button" href="https://link.dana.id/minta?full_url=https://qr.dana.id/v1/281012092025050317213299" target="_blank">Bayar via DANA</a></p>
-  <p><a href="index.html">Kembali ke Menu</a></p>
-        </div>
+      <button onclick="kirimKeWA()" class="button wa-button">Saya sudah bayar</button>
+
+      <p><a href="index.html">Kembali ke Menu</a></p>
+    </div>
   </div>
-   <script>
-  document.getElementById("gabungForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-    const nama = document.getElementById("nama").value.trim();
-    if (nama === "") return alert("Tolong isi nama terlebih dahulu.");
 
-    const noWA = "+628980851971"; // GANTI dengan nomor WhatsApp kamu
-    const menu = "Americano";   // GANTI sesuai menu
-    const pesan = `Halo, saya mau pesan ${menu} atas nama ${nama}`;
-    const linkWA = `https://wa.me/${noWA}?text=${encodeURIComponent(pesan)}`;
+  <script>
+    let namaPemesan = "";
 
-    // Kirim ke WhatsApp
-    window.open(linkWA, "_blank");
+    document.getElementById("gabungForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const nama = document.getElementById("nama").value.trim();
+      if (nama === "") return alert("Tolong isi nama terlebih dahulu.");
 
-    // Sembunyikan form & tampilkan QR code
-    document.getElementById("gabungForm").style.display = "none";
-    document.getElementById("tombol-bayar").style.display = "block";
-  });
-</script>
+      namaPemesan = nama;
 
+      // Sembunyikan form, tampilkan QR + tombol WA
+      document.getElementById("gabungForm").style.display = "none";
+      document.getElementById("tombol-bayar").style.display = "block";
+    });
 
+    function kirimKeWA() {
+      const noWA = "+628980851971"; 
+      const menu = "Americano";
+      const pesan = `Halo, saya sudah membayar pesanan *${menu}* atas nama *${namaPemesan}*.`;
+      const linkWA = `https://wa.me/${noWA}?text=${encodeURIComponent(pesan)}`;
+
+      window.open(linkWA, "_blank");
+    }
+  </script>
 </body>
 </html>
+
